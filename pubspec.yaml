@@ -59,9 +59,10 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/images/
+    - assets/fonts/
+    - assets/icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -75,51 +76,55 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Roboto
-      fonts:
-        - asset: assets/fonts/Roboto-Black.ttf
-          weight: 900
-        - asset: assets/fonts/Roboto-BlackItalic.ttf
-          weight: 900
-          style: italic
-        - asset: assets/fonts/Roboto-Bold.ttf
-          weight: 700
-        - asset: assets/fonts/Roboto-BoldItalic.ttf
-          weight: 700
-          style: italic
-        - asset: assets/fonts/Roboto-ExtraBold.ttf
-          weight: 800
-        - asset: assets/fonts/Roboto-ExtraBoldItalic.ttf
-          weight: 800
-          style: italic
-        - asset: assets/fonts/Roboto-ExtraLight.ttf
-          weight: 200
-        - asset: assets/fonts/Roboto-ExtraLightItalic.ttf
-          weight: 200
-          style: italic
-        - asset: assets/fonts/Roboto-Italic.ttf
-          style: italic
-        - asset: assets/fonts/Roboto-Light.ttf
-          weight: 300
-        - asset: assets/fonts/Roboto-LightItalic.ttf
-          weight: 300
-          style: italic
-        - asset: assets/fonts/Roboto-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/Roboto-MediumItalic.ttf
-          weight: 500
-          style: italic
-        - asset: assets/fonts/Roboto-Regular.ttf
-        - asset: assets/fonts/Roboto-SemiBold.ttf
-          weight: 600
-        - asset: assets/fonts/Roboto-SemiBoldItalic.ttf
-          weight: 600
-          style: italic
-        - asset: assets/fonts/Roboto-Thin.ttf
-          weight: 100
-        - asset: assets/fonts/Roboto-ThinItalic.ttf
-          weight: 100
-          style: italic
+  - family: Magilio
+    fonts:
+      - asset: assets/fonts/MagilioRegular-Yzv2O.ttf
+        weight: 900
+  - family: Roboto
+    fonts:
+      - asset: assets/fonts/Roboto-Black.ttf
+        weight: 900
+      - asset: assets/fonts/Roboto-BlackItalic.ttf
+        weight: 900
+        style: italic
+      - asset: assets/fonts/Roboto-Bold.ttf
+        weight: 700
+      - asset: assets/fonts/Roboto-BoldItalic.ttf
+        weight: 700
+        style: italic
+      - asset: assets/fonts/Roboto-ExtraBold.ttf
+        weight: 800
+      - asset: assets/fonts/Roboto-ExtraBoldItalic.ttf
+        weight: 800
+        style: italic
+      - asset: assets/fonts/Roboto-ExtraLight.ttf
+        weight: 200
+      - asset: assets/fonts/Roboto-ExtraLightItalic.ttf
+        weight: 200
+        style: italic
+      - asset: assets/fonts/Roboto-Italic.ttf
+        style: italic
+      - asset: assets/fonts/Roboto-Light.ttf
+        weight: 300
+      - asset: assets/fonts/Roboto-LightItalic.ttf
+        weight: 300
+        style: italic
+      - asset: assets/fonts/Roboto-Medium.ttf
+        weight: 500
+      - asset: assets/fonts/Roboto-MediumItalic.ttf
+        weight: 500
+        style: italic
+      - asset: assets/fonts/Roboto-Regular.ttf
+      - asset: assets/fonts/Roboto-SemiBold.ttf
+        weight: 600
+      - asset: assets/fonts/Roboto-SemiBoldItalic.ttf
+        weight: 600
+        style: italic
+      - asset: assets/fonts/Roboto-Thin.ttf
+        weight: 100
+      - asset: assets/fonts/Roboto-ThinItalic.ttf
+        weight: 100
+        style: italic
 
   #
   # For details regarding fonts from package dependencies,
