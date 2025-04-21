@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:aquatemp/pages/home.dart';
 import 'package:aquatemp/pages/updateSuhu.dart';
-import 'package:animations/animations.dart'; // ✅ Add animations package in pubspec.yaml
+import 'package:animations/animations.dart'; 
+import 'package:aquatemp/pages/profil.dart'; // ✅ Add animations package in pubspec.yaml
 
 void main() {
   runApp(const MyApp());
@@ -33,6 +34,7 @@ class _MainPageState extends State<MainPage> {
   final List<Widget> _pages = const [
     HomePage(),
     UpdateSuhuPage(),
+    ProfilPage(),
   ];
 
   @override
