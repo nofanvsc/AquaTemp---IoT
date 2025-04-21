@@ -2,10 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:aquatemp/pages/home.dart';
 import 'package:aquatemp/pages/updateSuhu.dart';
 import 'package:animations/animations.dart'; 
-import 'package:aquatemp/pages/profil.dart'; // ✅ Add animations package in pubspec.yaml
+import 'package:aquatemp/pages/profil.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
-void main() {
-  runApp(const MyApp());
+const supabaseUrl = 'https://nykrlmgkaopaweefkwwu.supabase.co';
+const supabaseKey = String.fromEnvironment('SUPABASE_KEY');
+
+Future<void> main() async {
+  await Supabase.initialize(url: supabaseUrl, anonKey: supabaseKey);
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -77,10 +82,7 @@ class _MainPageState extends State<MainPage> {
             icon: Icon(Icons.thermostat),
             label: 'Suhu',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.history),
-            label: 'Riwayat',
-          ),
+         
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: 'Profil',

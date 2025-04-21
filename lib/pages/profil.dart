@@ -42,7 +42,7 @@ class ProfilContent extends StatelessWidget {
                 shape: BoxShape.circle,
                 color: Colors.yellow[100],
                 image: const DecorationImage(
-                  image: AssetImage('assets/profile_pic.png'), // replace with your asset
+                  image: AssetImage('assets/images/milos.webp'), // replace with your asset
                   fit: BoxFit.cover,
                 ),
               ),
