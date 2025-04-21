@@ -5,17 +5,17 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color(0xFFF2F5FC),
-      body: SafeArea(
+    return Scaffold(
+      backgroundColor: const Color(0xFFF2F5FC),
+      body: const SafeArea(
         child: Column(
           children: [
             TopNav(),
             Expanded(child: Content()),
-            BottomNav(),
           ],
         ),
       ),
+     
     );
   }
 }
@@ -26,17 +26,14 @@ class TopNav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 24.0, bottom: 44.0),
+      padding:
+          const EdgeInsets.only(left: 16.0, right: 16.0, top: 24.0, bottom: 44.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Row(
             children: [
-              // App logo
-              Image.asset(
-                'assets/icons/logo.png', // replace with your logo path
-                height: 55,
-              ),
+              Image.asset('assets/icons/logo.png', height: 55),
               const SizedBox(width: 8),
               const Text(
                 'AQUATEMP',
@@ -48,11 +45,9 @@ class TopNav extends StatelessWidget {
               ),
             ],
           ),
-          // User avatar
-          CircleAvatar(
+          const CircleAvatar(
             radius: 20,
-            backgroundImage:
-                AssetImage('assets/user.png'), // replace with your image
+            backgroundImage: AssetImage('assets/user.png'),
           ),
         ],
       ),
@@ -83,7 +78,7 @@ class Content extends StatelessWidget {
                     children: [
                       Row(
                         children: const [
-                          Icon(Icons.water_drop), // Replace with water icon
+                          Icon(Icons.water_drop),
                           SizedBox(width: 8),
                           Text(
                             'Suhu Air',
@@ -108,7 +103,7 @@ class Content extends StatelessWidget {
                           color: Colors.blue[100],
                           borderRadius: BorderRadius.circular(8),
                         ),
-                      ), // Placeholder for wave graphic
+                      ),
                     ],
                   ),
                 ),
@@ -127,7 +122,7 @@ class Content extends StatelessWidget {
                   children: [
                     Row(
                       children: const [
-                        Icon(Icons.memory), // Replace with chip icon
+                        Icon(Icons.memory),
                         SizedBox(width: 4),
                         Text('Pemanas'),
                       ],
@@ -172,7 +167,7 @@ class Content extends StatelessWidget {
               children: [
                 Row(
                   children: const [
-                    Icon(Icons.show_chart), // Replace with graph icon
+                    Icon(Icons.show_chart),
                     SizedBox(width: 8),
                     Text('Batas Suhu',
                         style: TextStyle(fontWeight: FontWeight.bold)),
@@ -182,7 +177,7 @@ class Content extends StatelessWidget {
                 Container(
                   height: 100,
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(
+                    gradient: const LinearGradient(
                       colors: [Colors.blue, Colors.purple, Colors.red],
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
@@ -215,40 +210,6 @@ class Content extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-}
-
-class BottomNav extends StatelessWidget {
-  const BottomNav({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      currentIndex: 0,
-      selectedItemColor: Colors.blue,
-      unselectedItemColor: Colors.grey,
-      showSelectedLabels: true,
-      showUnselectedLabels: true,
-      type: BottomNavigationBarType.fixed,
-      items: const [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          label: 'Beranda',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.thermostat),
-          label: 'Suhu',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.history),
-          label: 'Riwayat',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.person),
-          label: 'Profil',
-        ),
-      ],
     );
   }
 }
