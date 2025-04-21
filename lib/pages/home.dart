@@ -129,7 +129,7 @@ class Content extends StatelessWidget {
                       children: const [
                         Icon(Icons.memory), // Replace with chip icon
                         SizedBox(width: 4),
-                        Text('IoT'),
+                        Text('Pemanas'),
                       ],
                     ),
                     const Spacer(),
