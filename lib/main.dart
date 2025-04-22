@@ -3,6 +3,7 @@ import 'package:aquatemp/pages/home.dart';
 import 'package:aquatemp/pages/updateSuhu.dart';
 import 'package:animations/animations.dart'; 
 import 'package:aquatemp/pages/profil.dart';
+import 'package:aquatemp/pages/riwayat.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 const supabaseUrl = 'https://nykrlmgkaopaweefkwwu.supabase.co';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Roboto'),
       home: const MainPage(),
+      color: Color(0xFFEEF1F8),
     );
   }
 }
@@ -39,6 +41,7 @@ class _MainPageState extends State<MainPage> {
   final List<Widget> _pages = const [
     HomePage(),
     UpdateSuhuPage(),
+    RiwayatPage(),
     ProfilPage(),
   ];
 
@@ -81,6 +84,10 @@ class _MainPageState extends State<MainPage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.thermostat),
             label: 'Suhu',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.history),
+            label: 'Riwayat',
           ),
          
           BottomNavigationBarItem(
