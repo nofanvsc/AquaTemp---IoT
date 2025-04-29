@@ -1,17 +1,45 @@
 import 'package:flutter/material.dart';
 import 'package:aquatemp/pages/home.dart';
 import 'package:aquatemp/pages/updateSuhu.dart';
-import 'package:animations/animations.dart'; 
+import 'package:animations/animations.dart';
 import 'package:aquatemp/pages/profil.dart';
 import 'package:aquatemp/pages/riwayat.dart';
+import 'package:aquatemp/pages/splash_screen.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-const supabaseUrl = 'https://nykrlmgkaopaweefkwwu.supabase.co';
-const supabaseKey = String.fromEnvironment('SUPABASE_KEY');
+const supabaseUrl = 'https://broimfjahqvfaiosfpkj.supabase.co';
+const supabaseKey =
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJyb2ltZmphaHF2ZmFpb3NmcGtqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUyNDA4ODYsImV4cCI6MjA2MDgxNjg4Nn0.zuq0K6uSIO9R0LfgGKm3YZKo_OtCDdvAtUm7EHc403Y';
 
 Future<void> main() async {
-  await Supabase.initialize(url: supabaseUrl, anonKey: supabaseKey);
-  runApp(MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  await Supabase.initialize(
+    url: supabaseUrl,
+    anonKey: supabaseKey,
+  );
+
+  // Sign in anonymously
+  try {
+    await Supabase.instance.client.auth.signInWithPassword(
+      email: 'ak4kurniawan@gmail.com',
+      password: 'Spensaganomor1',
+    );
+    debugPrint('Anonymous authentication successful');
+  } catch (e) {
+    debugPrint('Error in anonymous authentication: $e');
+    // If sign in fails, try to sign up
+    try {
+      await Supabase.instance.client.auth.signUp(
+        email: 'ak4kurniawan@gmail.com',
+        password: 'Spensaganomor1',
+      );
+      debugPrint('Anonymous user created');
+    } catch (e) {
+      debugPrint('Error creating anonymous user: $e');
+    }
+  }
+
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -22,8 +50,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Roboto'),
-      home: const MainPage(),
-      color: Color(0xFFEEF1F8),
+      home: const SplashScreen(),
+      color: const Color(0xFFEEF1F8),
     );
   }
 }
@@ -89,7 +117,6 @@ class _MainPageState extends State<MainPage> {
             icon: Icon(Icons.history),
             label: 'Riwayat',
           ),
-         
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: 'Profil',
